@@ -1,49 +1,38 @@
 <p id="notice"><%= notice %></p>
+<section id="post">
+  <h1><%= @post.title %></h1>
+  
+  <div id="infobar">
+      <strong id="price">$<%= @post.price %></strong>
+      <button class="btn btn-sm btn-default" type="button">
+        <%= @post.category %>
+      </button>
+      <button class="btn btn-sm btn-primary" type="button">
+        Likes <span class="badge"><%= @post.likes %></span>
+      </button>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @post.phone %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @post.price %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @post.email %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category %>
-</p>
+  <p>
+    <strong>Accept paypal:</strong>
+    <%= @post.accept_paypal %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @post.phone %>
-</p>
+  <p>
+    <strong>Accept stripe:</strong>
+    <%= @post.accept_stripe %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @post.email %>
-</p>
-
-<p>
-  <strong>Accept paypal:</strong>
-  <%= @post.accept_paypal %>
-</p>
-
-<p>
-  <strong>Accept stripe:</strong>
-  <%= @post.accept_stripe %>
-</p>
-
-<p>
-  <strong>Likes:</strong>
-  <%= @post.likes %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+</section>
