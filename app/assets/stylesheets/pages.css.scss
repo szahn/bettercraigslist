@@ -1,3 +1,23 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home_top_band {
+	background-image: url(https://wac.A8B5.edgecastcdn.net/80A8B5/static-assets/assets/new-marketing/hero-img-2f48f96c134d3518b2ff727526f39e11.jpg);
+	margin-top: -40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.home_top_band h1{
+	color: #ffffff;
+	font-size: 50px;
+}
+.home_top_band h3{
+	color: #ffffff;
+	font-size: 22px;
+}
+.category_band {
+	padding-top: 40px;
+}
+.category_second_row {
+	padding-top: 20px;
+}
