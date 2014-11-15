@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  post_id: 1
+  message: MyText
+  seller_experience: false
+  product_experience: false
+
+two:
+  user_id: 1
+  post_id: 1
+  message: MyText
+  seller_experience: false
+  product_experience: false
