@@ -3,12 +3,12 @@
   <h1><%= @post.title %></h1>
   
   <div id="infobar">
-      <strong id="price">$<%= @post.price %></strong>
+      <strong id="price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
       <button class="btn btn-sm btn-default" type="button">
         <%= @post.category %>
       </button>
       <button class="btn btn-sm btn-primary" type="button">
-        Likes <span class="badge"><%= @post.likes %></span>
+        Like <span class="badge"><%= @post.likes %></span>
       </button>
   </div>
 
