@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  user_id: 1
+  price: 9.99
+  category: MyString
+  phone: 1
+  email: MyString
+  accept_paypal: false
+  accept_stripe: false
+  likes: 1
+
+two:
+  title: MyString
+  user_id: 1
+  price: 9.99
+  category: MyString
+  phone: 1
+  email: MyString
+  accept_paypal: false
+  accept_stripe: false
+  likes: 1
