@@ -50,3 +50,4 @@ gem 'bootstrap-sass', '~> 3.3.1'
 #Gem to support Windows environments (See https://github.com/tzinfo/tzinfo/wiki/Resolving-TZInfo::DataSourceNotFound-Errors)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '~> 1.58.0'
