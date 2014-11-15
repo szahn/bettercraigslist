@@ -1,9 +1,9 @@
 <h1>Listing posts</h1>
 
-<table>
 
 
-  <tbody>
+
+
     <% @posts.each do |post| %>
       
       <h1><%= post.title %></h1>
@@ -21,8 +21,7 @@
       <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
