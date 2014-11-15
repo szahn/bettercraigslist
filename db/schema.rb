@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115071559) do
+ActiveRecord::Schema.define(version: 20141115082221) do
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.decimal  "price"
+    t.string   "category"
+    t.integer  "phone"
+    t.string   "email"
+    t.boolean  "accept_paypal"
+    t.boolean  "accept_stripe"
+    t.integer  "likes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
