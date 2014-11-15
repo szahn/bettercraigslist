@@ -40,3 +40,5 @@ gem 'bootstrap-sass', '~> 3.3.1'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Gem to support Windows environments (See https://github.com/tzinfo/tzinfo/wiki/Resolving-TZInfo::DataSourceNotFound-Errors)
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
