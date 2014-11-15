@@ -27,3 +27,40 @@
 	vertical-align: middle;
 	valign: middle;
 }
+#post #description{
+	font-size:1.1em;
+	padding: 2px;
+	margin: 6px;
+}
+
+#post #contact-info{
+	padding: 2px;
+	margin: 6px;
+}
+
+#post .payment-vendor-icon{
+	width:75px;
+	display:inline-block;
+}
+
+#post .paypal-icon{
+	background: url('http://i.imgur.com/wUf6bjj.png') 0px 0px;
+	height: 25px;
+}
+
+#post .no-paypal-icon{
+	background: url('http://i.imgur.com/wUf6bjj.png') 0px 25px;
+	height: 25px;
+	opacity: .5;
+}
+
+#post .stripe-icon{
+	background: url('http://i.imgur.com/VzVvnN9.png')  0px 0px;
+	height: 30px;
+}
+
+#post .no-stripe-icon{
+	background: url('http://i.imgur.com/VzVvnN9.png')  0px 30px;
+	height: 30px;
+	opacity: .5;
+}
