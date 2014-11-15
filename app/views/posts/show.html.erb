@@ -3,35 +3,36 @@
   <h1><%= @post.title %></h1>
   
   <div id="infobar">
-      <strong id="price">$<%= @post.price %></strong>
+      <strong id="price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
+      <button class="btn btn-sm btn-primary" type="button">
+        Like <span class="badge"><%= @post.likes %></span>
+      </button>
       <button class="btn btn-sm btn-default" type="button">
         <%= @post.category %>
       </button>
-      <button class="btn btn-sm btn-primary" type="button">
-        Likes <span class="badge"><%= @post.likes %></span>
-      </button>
   </div>
+<<<<<<< HEAD
 
  
   <p>
     <strong>Phone:</strong>
     <%= @post.phone %>
+=======
+  <p id="description">
+    <%=@post.description %>
+>>>>>>> 705cda0f631d461299a9ecdfc4f2241faa3f57b8
   </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= @post.email %>
-  </p>
+  <hr/>
 
-  <p>
-    <strong>Accept paypal:</strong>
-    <%= @post.accept_paypal %>
-  </p>
-
-  <p>
-    <strong>Accept stripe:</strong>
-    <%= @post.accept_stripe %>
-  </p>
+  <div id="contact-info">
+    <p>
+      <%= @post.phone == 0 ? '' : number_to_phone(@post.phone, area_code: true) %>
+      <a href="mailto:<%= @post.email %>"><%= @post.email %></a>
+      <div class="payment-vendor-icon <%= @post.accept_paypal ? 'paypal-icon' : 'no-paypal-icon' %>"></div>
+      <div class="payment-vendor-icon <%= @post.accept_stripe ? 'stripe-icon' : 'no-stripe-icon' %>"></div>
+    </p>
+  </div>
 
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <%= link_to 'Back', posts_path %>
