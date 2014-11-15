@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+#post h1 {font-size:1.6em;}
+#post #price{
+	color:green;
+	font-size:1.4em;
+}
+#post #category{
+	font-size:.9em;
+}
+
+#post #infobar{
+	vertical-align: middle;
+	valign: middle;
+}
