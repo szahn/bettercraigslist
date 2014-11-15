@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -14,3 +15,10 @@ posts = Post.create([
 	{title: 'VIKING PROFESSIONAL 6 BURNER GAS RANGE TOP LIKE NEW STAINLESS', description: '36\" WIDE 27\" DEPTH 8\" HEIGHT, GAS, STAINLESS STEEL, VIKING PROFESSIONAL. *DELIVERY AVAILABLE', price: 2399.0, category: 'appliances', phone: 9493533521, email: '', accept_paypal: false, accept_stripe: false, likes: 0},
 	{title: 'Golf Clubs: Cobra Tour Model II Irons', description: '2-Pitching Wedge (missing the 6 iron).\r\nMens RH clubs are in good condition and have no dings or rust.\r\nRawlings golf bag. \r\nGood condition with no tear.', price: 40.0, category: 'sporting-goods', phone: 9492344322, email: '', accept_paypal: false, accept_stripe: true, likes: 1},
 	{title: 'Chocolate Brown Sofa Set', description: 'The sofa piece has three separate seats divided by arm rests. The other piece is an arm chair. All in good condition, no visible tears. No delivery available, must bring own truck.', price: 80.0, category: 'furniture', phone: 0, email: 'mel11@aol.com', accept_paypal: true, accept_stripe: true, likes: 49}])
+posts.each do |post|
+	open('Ktg74nQ.jpg', 'wb') do |file|
+  		f = file << open('http://i.imgur.com/Ktg74nQ.jpg').read 
+  		post.image = f
+		post.save!
+	end
+end
