@@ -1,26 +1,45 @@
 <ol class="breadcrumb">
   <li><a href="#"><%= link_to 'Categories', root_url %></a></li>
-  <li class="active"><%= link_to @category.title, category_path(@category) %></li>
+  <li><%= link_to @post.category.title, category_path(@post.category) %></li>
+  <li class="active">Post</li>
 </ol>
 <p id="notice"><%= notice %></p>
-<h1><%=@category.title%></h1>
-<div class="container">
-	<% @posts.each do |post| %>
-  <div class="row category_row">
-    <div class="col-md-2">
-      <p><%= link_to image_tag(post.image.url(:medium), class: "img-responsive") %></p>
+<section id="post" class="container-fluid">
+  <div class="row">
+     <div class="col-md-10">
+        <h1><%= @post.title %></h1>
     </div>
-    <div class="col-md-4">
-      <h1 class="post_title"><%= link_to post.title, post_path(post) %></h1>
+     <div class="col-md-2">
+        <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
+                  <button class="btn btn-sm btn-primary" type="button">
+          Like <span class="badge"><%= @post.likes %></span>
+        </button>
+
+    </div>
+  <div>
+
+  <div class="row">
+     <div class="col-md-3">
+      <a href="<%= @post.image.url()%>" target="_newwindow" class="thumbnail">
+        <img src="<%= @post.image.url(:medium)%>" />
+      </a>
+     </div>
+     <div class="col-md-8">
       <p><%= link_to post.user.username, user_path(post.user) %></p>
-    </div>
-    <div class="col-md-4">
-      <p>Category: <strong><%= post.category.title %></strong></p>
-      <p><%= post.description %></p>
-    </div>
-    <div class="col-md-2">
-      <p class="price"><%= number_to_currency post.price %></p>
+      <p id="description">
+        <%=@post.description %>
+      </p>
     </div>
   </div>
-<% end %>
-</div>
+  <div id="contact-info" class="row">
+     <div class="col-md-12 well">
+        <div class="payment-vendor-icon <%= @post.accept_paypal ? 'paypal-icon' : 'no-paypal-icon' %>"></div>
+        <div class="payment-vendor-icon <%= @post.accept_stripe ? 'stripe-icon' : 'no-stripe-icon' %>"></div>
+        <%= @post.phone == 0 ? '' : number_to_phone(@post.phone, area_code: true) %>
+        <a href="mailto:<%= @post.email %>"><%= @post.email %></a>
+    </div>
+  </div>
+
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+</section>

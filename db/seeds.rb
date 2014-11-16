@@ -1,5 +1,9 @@
 require 'open-uri'
 
+user = User.create!(email: 'anonymous@buylegit.co', username: 'anonymous',
+	password: '123456789', 
+	password_confirmation: '123456789')
+
 categories = Category.create([
 	{title: "Electronics", image: URI.parse('http://i.imgur.com/0jlGKFa.png')},
 	{title: "Tools", image: URI.parse('http://i.imgur.com/OaZMhzd.png')},
@@ -20,7 +24,8 @@ posts = Post.create([
 		email: 'johnc1@ymail.com', 
 		accept_paypal: true, 
 		accept_stripe: true, 
-		likes: 32},
+		likes: 32,
+		user: user},
 	{category: categories[0], 
 		image: URI.parse('http://i.imgur.com/hQ671Jn.jpg'), 
 		title: 'Dell UltraSharp 2007WFPb - 20.1\" 1680x1050 resolution w/ USB hub', 
@@ -30,7 +35,8 @@ posts = Post.create([
 		email: 'wendell79@gmail.com', 
 		accept_paypal: false, 
 		accept_stripe: false, 
-		likes: 2},
+		likes: 2,
+		user: user},
 	{category: categories[0], 
 		image: URI.parse('http://i.imgur.com/Zsvupfn.jpg'), 
 		title: 'CASIO KEYBOARDS W/STAND', 
@@ -40,7 +46,8 @@ posts = Post.create([
 		email: 'chris.griffin@aol.com', 
 		accept_paypal: true, 
 		accept_stripe: false, 
-		likes: 2},
+		likes: 2,
+		user: user},
 	{category: categories[1], 
 		image: URI.parse('http://i.imgur.com/Zsvupfn.jpg'), 
 		title: 'VIKING PROFESSIONAL 6 BURNER GAS RANGE TOP LIKE NEW STAINLESS', 
@@ -50,7 +57,8 @@ posts = Post.create([
 		email: '', 
 		accept_paypal: false, 
 		accept_stripe: false, 
-		likes: 0},
+		likes: 0,
+		user: user},
 	{category: categories[2], 
 		image: URI.parse('http://i.imgur.com/c0KrtqW.jpg'), 
 		title: 'Golf Clubs: Cobra Tour Model II Irons', 
@@ -60,7 +68,8 @@ posts = Post.create([
 		email: '', 
 		accept_paypal: false, 
 		accept_stripe: true, 
-		likes: 1},
+		likes: 1,
+		user: user},
 	{category: categories[7], 
 		image: URI.parse('http://i.imgur.com/k7fg7ef.jpg'), 
 		title: 'Chocolate Brown Sofa Set', 
@@ -70,4 +79,5 @@ posts = Post.create([
 		email: 'mel11@aol.com', 
 		accept_paypal: true, 
 		accept_stripe: true, 
-		likes: 49}])
+		likes: 49,
+		user: user}])
