@@ -17,7 +17,7 @@
     <%= f.text_field :title, class: "title_field" %>
   </div><br>
 
-  <div>
+  <div class="caty">
     <%= f.label :category_id, class: "title cat_title" %><br>
     <p class="form_description ">where would you find it?</p> 
     <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
