@@ -1,36 +1,40 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h1>Sign up for Better Craigslist</h1>
+		<h1>BUY. SELL. SAFER.</h1>
 	</div>
 
 	<div class="panel-body">
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
 
-		  <div class="form-group">
+	  <div class="form-group">
         <%= f.label :username %>
+        <p class= "desc"> whats yo handle? <p>
         <%= f.text_field :username, class: "form-control" %>
       </div>
 
       <div class="form-group">
 		  	<%= f.label :email %>
+			<p class= "desc"> where can we get ahold of you? <p>
 		  	<%= f.email_field :email, class: "form-control" %>
 		  </div>
 
 		  <div class="form-group">
 		  	<%= f.label :password %>
+			<p class= "desc"> ssshsshhhhhhhhhh!! <p>
 		  	<%= f.password_field :password, class: "form-control" %>
 		  </div>
 
-		  <div class="form-group">
-		  	<%= f.submit "Sign up", class: "btn btn-primary" %>
+		  <div class="form-group sign_button" >
+
+		  <span title="are you ready?"><%= f.submit "Sign up", class: "btn btn-primary"  %> </span>	
 		  </div>
 		<% end %>
 	</div>
 
 	<div class="panel-footer">
 		<%= render "devise/shared/links" %>
-		<p>By joining Better Craigslist, you agree to our <%= link_to "Terms of Use", root_path, class: "text-warning", target: "_blank"  %></p>
+		<p>By joining Legit, you agree to our <%= link_to "Terms of Use", root_path, class: "text-warning", target: "_blank"  %></p>
 	</div>
 </div>
 

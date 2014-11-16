@@ -1,47 +1,35 @@
 <div class="home_top_band">
 	<div class="container">
 		<h1>Buy, Sell, Safer</h1>
-		<h3>Learn how to build websites & apps, write code or start a business.</h3>
+		<h3>Learn how to build websites &amp; apps, write code or start a business.</h3>
 		<p><%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary" %></p>
 	</div>
 </div>
 <div class="category_band">
 	<div class="container">
 		<div class="row">
+			<% @categories.take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/electronics.png"/>
-				<p>Electronics</p>
+				<a href="<%= url_for([category]) %>">
+				<div class="splash-category">
+					<img class="img-responsive" src="<%= category.image.url() %>"/>
+					<h2><span><%=category.title%></span></h2>
+				</div>
+				</a>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/tools.png"/>
-				<p>Tools</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/sports.png"/>
-				<p>Sports</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/games.png"/>
-				<p>Games</p>
-			</div>
+			<% end %>
 		</div>
 		<div class="row category_second_row">
+			<% @categories.offset(4).take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/cars.png"/>
-				<p>Vehicles</p>
+				<a href="<%= url_for([category]) %>">
+				<div class="splash-category">
+					<img class="img-responsive" src="<%= category.image.url() %>"/>
+					<h2><span><%=category.title%></span></h2>
+				</div>
+				</a>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/tickets.png"/>
-				<p>Tickets</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/music.png"/>
-				<p>Music</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/housing.png"/>
-				<p>Housing</p>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

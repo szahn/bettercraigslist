@@ -1,14 +1,29 @@
+<ol class="breadcrumb">
+  <li><a href="#"><%= link_to 'Categories', root_url %></a></li>
+  <li class="active"><%= link_to @category.title, category_path(@category) %></li>
+</ol>
 <p id="notice"><%= notice %></p>
+<h1><%=@category.title%></h1>
+<div class="fluid-container">
+	<% @posts.each do |post| %>
+		<div class="row">
+			<div class="row">
+				<div class="col-md-10">
+					<h4 class="post_title"><%= link_to post.title, post_path(post) %></h4>
+				</div>
+				<div class="col-md-2">
+					<span class="price"><%= number_to_currency post.price %></span>
+				</div>
+			</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
-<p>
-  <strong>Post:</strong>
-  <%= @category.post_id %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+			<div class="row">
+				<div class="col-md-2">
+					<%= link_to image_tag(post.image.url(:medium), class: ["img-responsive", "thumbnail"]) %>
+				</div>
+				<div class="col-md-8">
+					<p><%= truncate(post.description, length:512, separator: " ", ommision: "...")%></p>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

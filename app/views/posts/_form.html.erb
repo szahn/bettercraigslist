@@ -11,42 +11,60 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+  <div class="">
+    <%= f.label :title, class: "title"%>  
+      <div class="cat">
+        <%= f.label :category_id, class: "title cat_title" %><br>
+        <p class="form_description ">where would you find it?</p> 
+        <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
+      </div>
+
+    <br>  
+    <p class="form_description ">whatchya selling?</p> 
+    <%= f.text_field :title, class: "title_field" %>
   </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control" %>
+  
+  <div class="">
+    <%= f.label :description, class: "title" %><br>
+    <p class="form_description ">describe your item like one of your french girls</p> 
+    <%= f.text_area :description, class: " description_field"%>
   </div>
-  <div class="form-group">
-    <%= f.label :price %><br>
-    <%= f.text_field :price, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
-  </div>
-  <div class="form-group">
-    <%= f.label :phone %><br>
-    <%= f.number_field :phone, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :accept_paypal %><br>
-    <%= f.check_box :accept_paypal, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :accept_stripe %><br>
-    <%= f.check_box :accept_stripe, class: "form-control" %>
-  </div>
+  <hr>
+
+   <div id="checkboxes">
+    <div class="">
+      <%= f.check_box :accept_paypal, class: "" %>
+      <i class="fa fa-paypal"></i>
+      <%= f.label :accept_paypal, class: "title" %><br>
+      <p class="form_description_paypal ">it is the most trusted</p> 
+      
+      
+    </div>
+    <div class="">
+      <%= f.check_box :accept_stripe, class: ""%>
+      <i class="fa fa-cc-stripe"></i>
+      <%= f.label :accept_stripe, class: "title" %><br>
+      <p class="form_description_stripe">it is one of the easiest</p> 
+    </div>
+  </div> 
+  <hr>
+
+  <div id= "image_price">
+
+    <div class="">
+      <%= f.label :price, class: "title" %><br>
+      <p class="form_description ">how much is it worth?</p> 
+      <%= f.text_field :price, class: " price_field" %>
+    </div>
+    <br>
+    <div class="image">
+      <%= f.label :image, class: "title" %><br>
+      <p class="form_description ">lets see what it is</p> 
+      <%= f.file_field :image, class: " image_field" %>
+    </div>
+  </div>  
+  <hr>
+  
   <div class="form-group">
     <%= f.submit class: "btn btn-primary"  %>
   </div>

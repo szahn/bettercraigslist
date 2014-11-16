@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 	def home 
-		render :layout => 'home_layout'
+		@categories = Category.all
+		render :layout => 'home_layout', :categories => @categories
 	end 
 
 	def sports
