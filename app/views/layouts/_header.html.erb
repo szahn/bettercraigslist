@@ -16,7 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling alone -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
      <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Post", new_post_path %></li>
+          <li title="get some money for your nice things"><%= link_to "Post", new_post_path %></li>
           <% if user_signed_in? %>
             <li class="dropdown">
               <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
@@ -25,12 +25,12 @@
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 <li><%= link_to "Profile", user_path(current_user) %></li>
                 <li><%= link_to "Account", edit_user_registration_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <li title="I wish we could quit you :("><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                </ul>
             </li>
           <% else %>
-            <li><%= link_to "Log in", new_user_session_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li title= "it's dangerous to go alone, sign in"><%= link_to "Log in", new_user_session_path %></li>
+            <li title= "Let the deals begin!"><%= link_to "Sign up", new_user_registration_path %></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
