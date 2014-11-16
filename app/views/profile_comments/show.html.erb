@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @profile_comment.post_id %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @profile_comment.message %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile_comment.user_id %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @profile_comment.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @profile_comment.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_profile_comment_path(@profile_comment) %> |
+<%= link_to 'Back', profile_comments_path %>
