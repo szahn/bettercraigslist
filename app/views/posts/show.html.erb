@@ -2,19 +2,25 @@
   <li><a href="#"><%= link_to 'Categories', root_url %></a></li>
   <li><%= link_to @post.category.title, category_path(@post.category) %></li>
   <li class="active">Post</li>
+
 </ol>
 <p id="notice"><%= notice %></p>
 <section id="post" class="container-fluid">
   <div class="row">
      <div class="col-md-10">
         <h1><%= @post.title %></h1>
+         <h4 class="sold_by"> Sold by <%= @post.user.username %> </h3>
     </div>
+
      <div class="col-md-2">
         <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
-                  <button class="btn btn-sm btn-primary" type="button">
+         
+
+    <button type="button" title= "sends an automated email to the seller" class="btn btn-primary butt"> Express Interest</button>
+       
+                <button class="btn btn-sm btn-primary butt" type="button">
           Like <span class="badge"><%= @post.likes %></span>
         </button>
-
     </div>
   <div>
 
@@ -39,8 +45,7 @@
      <div class="col-md-12 well">
         <div class="payment-vendor-icon <%= @post.accept_paypal ? 'paypal-icon' : 'no-paypal-icon' %>"></div>
         <div class="payment-vendor-icon <%= @post.accept_stripe ? 'stripe-icon' : 'no-stripe-icon' %>"></div>
-        <%= @post.phone == 0 ? '' : number_to_phone(@post.phone, area_code: true) %>
-        <a href="mailto:<%= @post.email %>"><%= @post.email %></a>
+
     </div>
   </div>
 

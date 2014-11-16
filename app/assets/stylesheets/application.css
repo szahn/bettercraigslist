@@ -118,3 +118,18 @@
 #right_foot {
 	float: right;
 }
+
+.freature_title {
+
+}
+
+.feature_wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.butt {
+	margin: 5px;
+
+}
