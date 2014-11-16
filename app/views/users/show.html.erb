@@ -1,5 +1,21 @@
 <h1><%= @user.username %>'s Profile</h1>
-<h3>My Posts</h3>
+<div class="row gray_bg">
+  <div class="col-md-3">
+    <h3><span class="fa fa-thumbs-up"> 100%</h3>
+    <p>Product Review</p>
+  </div>
+  <div class="col-md-3">
+    <h3><span class="fa fa-thumbs-up"> 100%</h3>
+    <p>Seller Review</p>
+  </div>
+</div>
+<h3>Reviews</h3>
+<% @comments.each do |comment| %>
+  <p><%= comment.user.username %></p>
+  <p><%= comment.message %></p>
+<% end %>
+<%= render 'comment_form' %>
+<h3>My Legit Posts</h3>
 <% @posts.each do |post| %>
   <div class="row category_row">
     <div class="col-md-2">
