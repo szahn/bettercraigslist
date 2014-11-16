@@ -28,10 +28,10 @@
   </div>
   <div id="contact-info" class="row">
      <div class="col-md-12 well">
-        <%= @post.phone == 0 ? '' : number_to_phone(@post.phone, area_code: true) %>
-        <a href="mailto:<%= @post.email %>"><%= @post.email %></a>
         <div class="payment-vendor-icon <%= @post.accept_paypal ? 'paypal-icon' : 'no-paypal-icon' %>"></div>
         <div class="payment-vendor-icon <%= @post.accept_stripe ? 'stripe-icon' : 'no-stripe-icon' %>"></div>
+        <%= @post.phone == 0 ? '' : number_to_phone(@post.phone, area_code: true) %>
+        <a href="mailto:<%= @post.email %>"><%= @post.email %></a>
     </div>
   </div>
 
