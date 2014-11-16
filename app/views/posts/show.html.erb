@@ -16,13 +16,13 @@
     </div>
 
      <div class="col-md-2">
-        <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
+        <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong> 
          
 
     <button type="button" title= "sends an automated email to the seller" class="btn btn-primary butt"> Express Interest</button>
        
                 <button class="btn btn-sm btn-primary butt" type="button">
-          Like <span class="badge"><%= @post.likes %></span>
+          Want <span class="badge"><%= @post.likes %></span>
         </button>
     </div>
   <div>
@@ -45,11 +45,20 @@
     </div>
   </div>
   <div id="contact-info" class="row">
-     <div class="col-md-12 well">
-        <div class="payment-vendor-icon <%= @post.accept_paypal ? 'paypal-icon' : 'no-paypal-icon' %>"></div>
-        <div class="payment-vendor-icon <%= @post.accept_stripe ? 'stripe-icon' : 'no-stripe-icon' %>"></div>
+         <div class="col-md-12 well">
+            
+            <% if @post.accept_paypal || @post.accept_stripe %>
+              <p> <%= "This seller Accepts" %> <p>
+            <% end %>
 
-    </div>
+            <div>
+            <div class="payment-vendor-icon <%= if @post.accept_paypal 
+                                                  'paypal-icon'
+                                                end %>"></div>
+            <div class="payment-vendor-icon <%= if @post.accept_stripe  
+                                                  'stripe-icon'
+                                                end %>"></div>
+          </div>
+
   </div>
-
 </section>

@@ -23,8 +23,14 @@
 </div>
 <h3>Reviews</h3>
 <% @comments.each do |comment| %>
-  <p><%= comment.user.username %></p>
-  <p><%= comment.message %></p>
+  <div class="row comments"> 
+    <div class="col-md-1">
+      <p><strong><%= comment.user.username %></strong></p>
+    </div>
+    <div class="col-md-11">
+      <p><%= comment.message %></p>
+    </div>
+  </div>
 <% end %>
 <%= render 'comment_form' %>
 <h3>My Legit Posts</h3>
@@ -38,7 +44,7 @@
       <p><%= link_to post.user.username, user_path(post.user) %></p>
     </div>
     <div class="col-md-4">
-      <p>Category: <strong><%= post.category %></strong></p>
+      <p>Category: <strong><%= post.category.title %></strong></p>
       <p><%= post.description %></p>
     </div>
     <div class="col-md-2">
