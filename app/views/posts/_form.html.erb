@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-
   <div class="">
     <%= f.label :title, class: "title"%>  
       <div class="cat">
-        <%= f.label :category, class: "title cat_title" %><br>
+        <%= f.label :category_id, class: "title cat_title" %><br>
         <p class="form_description ">where would you find it?</p> 
-        <%= f.select(:category, options_for_select([['Electronics', 'electronics'], ['Tools', 'tools'], ['Sports', 'sports'], ['Vehicles', 'vehicles'], ['Tickets', 'tickets'], ['Music', 'music'], ['Games', 'games'], ['Housing', 'housing']])) %>
+        <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
       </div>
 
     <br>  
     <p class="form_description ">whatchya selling?</p> 
     <%= f.text_field :title, class: "title_field" %>
-
   </div>
   
   <div class="">
