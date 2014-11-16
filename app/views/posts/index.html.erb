@@ -1,18 +1,18 @@
+<%= link_to 'New Post', new_post_path %>
+
+
 <h1>Listing posts</h1>
 
-
+<h1><%= @posts.category %> <h1>s
 
 
 
     <% @posts.each do |post| %>
       
-      <h1><%= post.title %></h1>
+      <h2><%= post.title %></h2>
       <p><%= image_tag post.image.url(:medium) %> </p>
       <p><%= post.user_id %></p>
       <p><%= post.price %></p>
-      <p><%= post.category %></p>
-      <p><%= post.phone %></p>
-      <p><%= post.email %></p>
       <p><%= post.accept_paypal %></p>
       <p><%= post.accept_stripe %></p>
       <p><%= post.likes %></p>
@@ -23,6 +23,8 @@
     <% end %>
 
 
+
+
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
