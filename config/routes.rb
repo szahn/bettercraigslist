@@ -14,7 +14,5 @@ Rails.application.routes.draw do
   resources :users, :only => [:show]
   
   root :to => 'pages#home'
-  get "sports" => "pages#sports"
-  get "cat/:category" => "categories#show"
 
 end
