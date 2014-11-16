@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.where(title: params[:category]).take
+    @category = Category.where(id: params[:id]).take
     @posts = Post.where(category_id: @category.id)
   end
 

@@ -1,16 +1,25 @@
+<ol class="breadcrumb">
+  <li><a href="#"><%= link_to 'Categories', root_url %></a></li>
+  <li><%= link_to @post.category.title, category_path(@post.category) %></li>
+  <li class="active">Post</li>
+</ol>
 <p id="notice"><%= notice %></p>
 <section id="post" class="container-fluid">
-  <h1><%= @post.title %></h1>
-  
   <div class="row">
-     <div class="col-md-12">
-        <strong id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
-        <button class="btn btn-sm btn-primary" type="button">
+     <div class="col-md-10">
+        <h1><%= @post.title %></h1>
+    </div>
+     <div class="col-md-2">
+        <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
+                  <button class="btn btn-sm btn-primary" type="button">
           Like <span class="badge"><%= @post.likes %></span>
         </button>
-        <button class="btn btn-sm btn-default" type="button">
-          <%= @post.category.title %>
-        </button>
+
+    </div>
+  <div>
+
+  <div class="row">
+     <div class="col-md-12">
     </div>
   </div>
 

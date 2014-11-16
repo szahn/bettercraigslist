@@ -1,7 +1,7 @@
 <div class="home_top_band">
 	<div class="container">
 		<h1>Buy, Sell, Safer</h1>
-		<h3>Learn how to build websites & apps, write code or start a business.</h3>
+		<h3>Learn how to build websites &amp; apps, write code or start a business.</h3>
 		<p><%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary" %></p>
 	</div>
 </div>
@@ -11,7 +11,7 @@
 			<% @categories.take(4).each do | category | %>
 			<div class="col-md-3">
 				<img class="img-responsive" src="<%= category.image.url() %>"/>
-				<p><%=category.title %></p>
+				<%= link_to category.title, category_path(category) %>
 			</div>
 			<% end %>
 		</div>
@@ -19,7 +19,7 @@
 			<% @categories.offset(4).take(4).each do | category | %>
 			<div class="col-md-3">
 				<img class="img-responsive" src="<%= category.image.url() %>"/>
-				<p><%=category.title %></p>
+				<%= link_to category.title, category_path(category) %>
 			</div>
 			<% end %>
 		</div>
