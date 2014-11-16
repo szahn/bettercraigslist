@@ -4,12 +4,12 @@
   
   <div class="row">
      <div class="col-md-12">
-        <strong id="price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
+        <strong id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong>
         <button class="btn btn-sm btn-primary" type="button">
           Like <span class="badge"><%= @post.likes %></span>
         </button>
         <button class="btn btn-sm btn-default" type="button">
-          <%= @post.category %>
+          <%= @post.category.title %>
         </button>
     </div>
   </div>

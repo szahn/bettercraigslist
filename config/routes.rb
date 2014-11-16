@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   
   root :to => 'pages#home'
   get "sports" => "pages#sports"
+  get "cat/:category" => "categories#show"
+
 end
