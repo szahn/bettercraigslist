@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :profile_comments
+
   resources :reviews
 
   resources :comments
