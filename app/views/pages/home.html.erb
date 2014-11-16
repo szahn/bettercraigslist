@@ -1,7 +1,7 @@
 <div class="home_top_band">
 	<div class="container">
 		<h1>Buy, Sell, Safer</h1>
-		<h3>Learn how to build websites & apps, write code or start a business.</h3>
+		<h3>Learn how to build websites &amp; apps, write code or start a business.</h3>
 		<p><%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary" %></p>
 	</div>
 </div>
@@ -10,16 +10,24 @@
 		<div class="row">
 			<% @categories.take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="<%= category.image.url() %>"/>
-				<p><%=category.title %></p>
+				<a href="<%= url_for([category]) %>">
+				<div class="splash-category">
+					<img class="img-responsive" src="<%= category.image.url() %>"/>
+					<h2><span><%=category.title%></span></h2>
+				</div>
+				</a>
 			</div>
 			<% end %>
 		</div>
 		<div class="row category_second_row">
 			<% @categories.offset(4).take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="<%= category.image.url() %>"/>
-				<p><%=category.title %></p>
+				<a href="<%= url_for([category]) %>">
+				<div class="splash-category">
+					<img class="img-responsive" src="<%= category.image.url() %>"/>
+					<h2><span><%=category.title%></span></h2>
+				</div>
+				</a>
 			</div>
 			<% end %>
 		</div>
