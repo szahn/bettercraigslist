@@ -8,40 +8,20 @@
 <div class="category_band">
 	<div class="container">
 		<div class="row">
+			<% @categories.take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/electronics.png"/>
-				<p>Electronics</p>
+				<img class="img-responsive" src="<%= category.image.url() %>"/>
+				<p><%=category.title %></p>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/tools.png"/>
-				<p>Tools</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/sports.png"/>
-				<p>Sports</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/games.png"/>
-				<p>Games</p>
-			</div>
+			<% end %>
 		</div>
 		<div class="row category_second_row">
+			<% @categories.offset(4).take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/cars.png"/>
-				<p>Vehicles</p>
+				<img class="img-responsive" src="<%= category.image.url() %>"/>
+				<p><%=category.title %></p>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/tickets.png"/>
-				<p>Tickets</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/music.png"/>
-				<p>Music</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/bettercraiglist/images/housing.png"/>
-				<p>Housing</p>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

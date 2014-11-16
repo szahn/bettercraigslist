@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 	def home 
-		render :layout => 'home_layout'
+		@categories = Category.all
+		puts @categories.to_json
+		render :layout => 'home_layout', :categories => @categories
 	end 
 
 	def sports
