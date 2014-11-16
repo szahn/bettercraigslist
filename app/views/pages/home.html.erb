@@ -8,40 +8,20 @@
 <div class="category_band">
 	<div class="container">
 		<div class="row">
+			<% @categories.take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Electronics</p>
+				<img class="img-responsive" src="<%= category.image.url() %>"/>
+				<p><%=category.title %></p>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Tools</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Sports</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Sports</p>
-			</div>
+			<% end %>
 		</div>
 		<div class="row category_second_row">
+			<% @categories.offset(4).take(4).each do | category | %>
 			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Vehicles</p>
+				<img class="img-responsive" src="<%= category.image.url() %>"/>
+				<p><%=category.title %></p>
 			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Tickets</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Music</p>
-			</div>
-			<div class="col-md-3">
-				<img class="img-responsive" src="https://s3.amazonaws.com/ksr/projects/932466/photo-ed.jpg"/>
-				<p>Housing</p>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

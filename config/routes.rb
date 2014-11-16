@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+
   resources :profile_comments
 
   resources :reviews
@@ -12,4 +14,5 @@ Rails.application.routes.draw do
   resources :users, :only => [:show]
   
   root :to => 'pages#home'
+  get "sports" => "pages#sports"
 end

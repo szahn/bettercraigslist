@@ -1,7 +1,4 @@
-
-
-<h3><%="#{@user.username}'s Profile" %><h3>
-z
+<h3><%= @user.username %>'s Profile<h3>
     <% @posts.each do |post| %>
       
       <h1><%= post.title %></h1>
