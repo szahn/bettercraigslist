@@ -9,11 +9,13 @@
   <div class="row">
      <div class="col-md-10">
         <h1><%= @post.title %></h1>
-         <h5 class="sold_by"> Sold by <%= @post.user.username %> </h5>
+         <h5 class="sold_by"> Sold by <%= link_to @post.user.username, user_path(@post.user) %> </h5>
+          <% if user_signed_in? && current_user.id == @post.user.id %>
+          <%= link_to 'Edit Your Post', edit_post_path(@post) %>
+          <% end %>
     </div>
 
      <div class="col-md-2">
-     <h1>wevwe;kfjgbw;erjkbnw;kbfjw;jkfbnw;ekj</h1>
         <span id="post-price"><%= number_to_currency(@post.price, :unit => "$") %></strong> 
          
 
@@ -50,8 +52,6 @@
             <% end %>
 
             <div>
-           
-
             <div class="payment-vendor-icon <%= if @post.accept_paypal 
                                                   'paypal-icon'
                                                 end %>"></div>
@@ -61,5 +61,4 @@
           </div>
 
   </div>
-  <%= link_to 'Back', posts_path %>
 </section>
