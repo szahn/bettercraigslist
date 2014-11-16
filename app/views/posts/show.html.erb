@@ -9,7 +9,7 @@
   <div class="row">
      <div class="col-md-10">
         <h1><%= @post.title %></h1>
-         <h5 class="sold_by"> Sold by <%= @post.user.username %> </h5>
+         <h5 class="sold_by"> Sold by <%= link_to @post.user.username, user_path(@post.user) %> </h5>
           <% if user_signed_in? && current_user.id == @post.user.id %>
           <%= link_to 'Edit Your Post', edit_post_path(@post) %>
           <% end %>
