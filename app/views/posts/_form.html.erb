@@ -13,16 +13,15 @@
 
   <div class="">
     <%= f.label :title, class: "title"%>  
-      <div class="cat">
-        <%= f.label :category_id, class: "title cat_title" %><br>
-        <p class="form_description ">where would you find it?</p> 
-        <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
-      </div>
-
-    <br>  
     <p class="form_description ">whatchya selling?</p> 
     <%= f.text_field :title, class: "title_field" %>
-  </div>
+  </div><br>
+
+  <div>
+    <%= f.label :category_id, class: "title cat_title" %><br>
+    <p class="form_description ">where would you find it?</p> 
+    <%= f.collection_select :category_id, Category.all, :id, :title, {prompt: "Select a category"}, {class: "form-control"}  %>
+  </div><br>
   
   <div class="">
     <%= f.label :description, class: "title" %><br>
