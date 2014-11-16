@@ -1,6 +1,6 @@
 require 'open-uri'
 
-user = User.create!(email: 'anonymous@buylegit.co', username: 'anonymous',
+user = User.create!(email: 'anonymous1@buylegit.co', username: 'anonymous',
 	password: '123456789', 
 	password_confirmation: '123456789')
 
