@@ -11,7 +11,7 @@
       
       <h2><%= post.title %></h2>
       <p><%= image_tag post.image.url(:medium) %> </p>
-      <p><%= post.user_id %></p>
+      <p><%= post.user.username%></p>
       <p><%= post.price %></p>
       <p><%= post.accept_paypal %></p>
       <p><%= post.accept_stripe %></p>
