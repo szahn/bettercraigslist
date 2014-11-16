@@ -72,6 +72,11 @@
 	width: 75%;
 
 }
+
+.signin_field {
+	width:75%;
+}
+
  .sign_button {
  	margin-top: 15px;
  }
@@ -102,3 +107,14 @@
    padding: 10px; 
 }
 
+#catchphrase {
+	max-width: 70%;
+}
+
+#left_foot {
+	float: left;
+}
+
+#right_foot {
+	float: right;
+}

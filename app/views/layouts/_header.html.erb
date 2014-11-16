@@ -16,9 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling alone -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
      <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Post", new_post_path %></li>
-          <li><%= link_to "link", root_path %></li>
           <% if user_signed_in? %>
             <li class="dropdown">
               <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">

@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<div class="panel-title">
-			<h1>Sign in</h1>
+			<h1>Get back in the game!</h1>
 		</div>
 	</div>
 	<div class="panel-body">
@@ -9,12 +9,14 @@
 
 		  <div class="form-group">
 		  	<%= f.label :email %>
-		  	<%= f.email_field :email, class: "form-control", :autofocus => true %>
+		  	<p class= "desc"> Why did you leave? <p>
+		  	<%= f.email_field :email, class: "form-control signin_field", :autofocus => true %>
 			</div>
 
 		  <div class="form-group">
 		  	<%= f.label :password %>
-		  	<%= f.password_field :password, class: "form-control" %>
+		  	 <p class= "desc"> we missed you :( <p>
+		  	<%= f.password_field :password, class: "form-control signin_field" %>
 		  </div>
 
 	    <div class="form-group">
@@ -25,7 +27,7 @@
 	    </div>
 
 		  <div class="form-group">
-		  	<%= f.submit "Sign in", class: "btn btn-primary" %>
+		  	<span title="welcome back :)"><%= f.submit "Sign in", class: "btn btn-primary" %> </span>
 		  </div>
 		<% end %>
 	</div>
