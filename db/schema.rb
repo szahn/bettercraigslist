@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116014559) do
+ActiveRecord::Schema.define(version: 20141116024459) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20141116014559) do
     t.string   "title"
     t.integer  "user_id"
     t.decimal  "price"
-    t.string   "category"
     t.integer  "phone"
     t.string   "email"
     t.boolean  "accept_paypal"
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141116014559) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "description"
+    t.integer  "category_id"
   end
 
   create_table "profile_comments", force: true do |t|
