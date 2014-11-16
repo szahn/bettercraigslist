@@ -10,6 +10,9 @@
      <div class="col-md-10">
         <h1><%= @post.title %></h1>
          <h5 class="sold_by"> Sold by <%= @post.user.username %> </h5>
+          <% if user_signed_in? && current_user.id == @post.user.id %>
+          <%= link_to 'Edit Your Post', edit_post_path(@post) %>
+          <% end %>
     </div>
 
      <div class="col-md-2">
@@ -49,6 +52,4 @@
     </div>
   </div>
 
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
 </section>
