@@ -16,4 +16,6 @@
 /tmp
 
 #ignore paperclip generated images
+/system/posts/images/*.jpg
+/system/posts/images/*.png
 /system/posts/images
