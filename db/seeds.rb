@@ -1,6 +1,5 @@
 require 'open-uri'
 
-Category.delete_all
 categories = Category.create([
 	{title: "Electronics", image: URI.parse('http://i.imgur.com/0jlGKFa.png')},
 	{title: "Tools", image: URI.parse('http://i.imgur.com/OaZMhzd.png')},
@@ -11,7 +10,6 @@ categories = Category.create([
 	{title: "Music", image: URI.parse('http://i.imgur.com/Wi1n9hT.png')},
 	{title: "Housing", image: URI.parse('http://i.imgur.com/I1JdpRp.png')}])
 
-Post.delete_all
 posts = Post.create([
 	{category: categories[0], 
 		image: URI.parse('http://i.imgur.com/Ktg74nQ.jpg'), 
